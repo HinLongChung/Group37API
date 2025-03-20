@@ -1,0 +1,31 @@
+\chapter{Overview}
+\hypertarget{index}{}\label{index}\index{Overview@{Overview}}
+This is an overview for the software of the Embedded System Project by Group 37 of UoM EEE
+
+ Purpose  The purpose of this software is to drive a buggy autonomously along a track with white centre lines.
+
+The buggy will achieve this by taking the reading from the sensors and adjust the PWM signal sent to the Left and Right motors accordingly.
+
+ Hardware  The software is written for the \href{https://www.st.com/en/microcontrollers-microprocessors/stm32f401re.html}{\texttt{ STM32\+F401\+RE}} Nucleo Platform with the UM1601 Interface board.
+
+Six \href{https://www.vishay.com/docs/83760/tcrt5000.pdf}{\texttt{ TCRT5000}} sensors are used.
+
+Two \href{http://uk.rs-online.com/web/p/dc-motors/2389715/}{\texttt{ RS Pro DC Motor 6-\/15V}} and \href{https://www.broadcom.com/products/motion-control-encoders/magnetic-encoders/aeat-601bf06}{\texttt{ Broadcom AEAT-\/601\+B-\/\+F06 – Hall Effect Incremental Quadrature Encoder (256 CPR) }} are used
+
+A \href{https://store.arduino.cc/products/bluetooth-low-energy-4-0-module-hm-10?srsltid=AfmBOope2rM6RkUvddsirgnamtKd3tgoWuPAX5WVlHGSZzU0Z6AIpuno}{\texttt{ HM-\/10}} Bluetooth 4.\+0 module is used
+
+ Libraries 
+
+The software is written in C++ and the following libraries are used
+
+\href{https://os.mbed.com/docs/mbed-os/v6.16/feature-i2c-doxy/mbed_8h_source.html}{\texttt{ mbed.\+h}}
+
+\href{https://os.mbed.com/users/askksa12543/code/C12832//file/990d5eec2ef6/C12832.h/}{\texttt{ C12832.\+h}}
+
+\href{https://cplusplus.com/reference/cmath/}{\texttt{ math.\+h}}
+
+\href{https://os.mbed.com/users/aberk/code/QEI/file/5c2ad81551aa/QEI.h/}{\texttt{ QEI.\+h}}
+
+ Functions 
+
+All the functions used are documented in the \doxysectlink{functions}{Functions}{0} page. 
