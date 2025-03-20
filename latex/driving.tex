@@ -1,0 +1,20 @@
+\doxysection{Driving}
+\hypertarget{driving}{}\label{driving}\index{Driving@{Driving}}
+The functions listed on this page is related to driving the buggy
+
+ Forward  
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ forward()}
+
+\end{DoxyCode}
+ This function is designed to drive the buggy consistently by sending the same PWN signal to both motors, checking for the white line constantly from the input from the sensors. Also, this function will check for any line breaks and call the stop function if the track has ended.  Left turn  
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ leftturn()}
+
+\end{DoxyCode}
+ This function is designed to turn the buggy left by slowing down and reversing the right motor to achieve a bigger turning circle.  Right turn  
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ rightturn()}
+
+\end{DoxyCode}
+ This function is designed to turn the buggy left by slowing down and reversing the left motor to achieve a bigger turning circle. 
