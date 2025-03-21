@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Group37: Functions</title>
+<title>Group37: Output</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -76,7 +76,7 @@ $(function() { codefold.init(0); });
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function(){initNavTree('functions.html',''); initResizable(true); });
+$(function(){initNavTree('output.html',''); initResizable(true); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -102,16 +102,12 @@ $(function(){initNavTree('functions.html',''); initResizable(true); });
 </div>
 
 <div><div class="header">
-  <div class="headertitle"><div class="title">Functions</div></div>
+  <div class="headertitle"><div class="title">Output</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><div style="font-size: 2em; color: cyan; margin-bottom: 10px;"> Main Function </div> <div class="fragment"><div class="line"><span class="keywordtype">int</span> main()</div>
-</div><!-- fragment --><p> This is the main function of the software, and will be the first piece of code the buggy runs. The main function will wait for the input from the user to start the buggy. It will also display the instructions for the user on the LCD screen. The fire button on the Application Shield will be used as the input to start the buggy.</p>
-<p>The other functions used are divided in these groups with different purposes</p><ul>
-<li><a class="el" href="driving.html">Driving</a></li>
-<li><a class="el" href="sense.html">Sensing</a></li>
-<li><a class="el" href="output.html">Output</a> </li>
-</ul>
+<div class="textblock"><p>The functions listed on this page are related to the input and output of the buggy. </p><div style="font-size: 2em; color: cyan; margin-bottom: 10px;"> Speed Output </div> <div class="fragment"><div class="line"><span class="keywordtype">void</span> speedoutput(<span class="keywordtype">int</span> currentspeedL, <span class="keywordtype">int</span> currentspeedR)</div>
+</div><!-- fragment --><p> This function will calculate the average speed between the two wheels, thus the average speed of the buggy, then output the speed to the lcd and the BLE module. </p><div style="font-size: 2em; color: cyan; margin-bottom: 10px;"> State Indicator </div> <div class="fragment"><div class="line"><span class="keywordtype">void</span> stateindicator(<span class="keywordtype">int</span> state)</div>
+</div><!-- fragment --><p> This function will indicate the status of the buggy by changing the colour on the LED on the Application Shield, an global integer will be used for determining the state of the buggy. Green means the buggy is going forward normally, Blue means the buggy is turning, Flashing Red means the buggy is stopping and Red means the buggy has reached the end of the track and has stopped. </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

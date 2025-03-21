@@ -27,14 +27,13 @@ var NAVTREE =
   [ "Group37", "index.html", [
     [ "Overview", "index.html", null ],
     [ "IO pins", "io.html", null ],
-    [ "Functions", "functions.html", "functions" ],
-    [ "end", "end.html", null ]
+    [ "Functions", "functions.html", "functions" ]
   ] ]
 ];
 
 var NAVTREEINDEX =
 [
-"_o_f.html"
+"driving.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

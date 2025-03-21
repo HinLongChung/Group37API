@@ -1,7 +1,7 @@
 var indexSectionsWithContent =
 {
-  0: "defiops",
-  1: "defiops"
+  0: "dfiops",
+  1: "dfiops"
 };
 
 var indexSectionNames =

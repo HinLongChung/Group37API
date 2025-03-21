@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['io_20pins_0',['IO pins',['../io.html',1,'']]]
+  ['output_0',['Output',['../output.html',1,'functions']]],
+  ['overview_1',['Overview',['../index.html',1,'']]]
 ];
