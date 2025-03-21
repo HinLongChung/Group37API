@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Group37: IO pins</title>
+<title>Group37: Output</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -76,7 +76,7 @@ $(function() { codefold.init(0); });
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function(){initNavTree('io.html',''); initResizable(true); });
+$(function(){initNavTree('_o_f.html',''); initResizable(true); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -102,37 +102,12 @@ $(function(){initNavTree('io.html',''); initResizable(true); });
 </div>
 
 <div><div class="header">
-  <div class="headertitle"><div class="title">IO pins</div></div>
+  <div class="headertitle"><div class="title">Output</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>The following IO pins are used in this project </p><div style="font-size: 2em; color: cyan; margin-bottom: 10px;"> Input pins </div> <div class="fragment"><div class="line">InterruptIn firebutton(PB_5);</div>
-<div class="line">Serial BLE(PA_11, PA_12);</div>
-<div class="line">AnalogIn sensor1(PC_10);</div>
-<div class="line">AnalogIn sensor2(PC_11);</div>
-<div class="line">AnalogIn sensor3(PC_12);</div>
-<div class="line">AnalogIn sensor4(PD_2);</div>
-<div class="line">AnalogIn sensor5(PH_0);</div>
-<div class="line">AnalogIn sensor6(PH_1);</div>
-<div class="line">AnalogIn accelerometer(0x58);</div>
-<div class="line">QEI LMotor(PC_2, PC_3, NC, 256); </div>
-<div class="line">QEI RMotor (PB_9, PB_8, NC, 256);</div>
-</div><!-- fragment --><p> The Fire button is used as the input to start the operation of the buggy.</p>
-<p>The HM-10 module is initiated as a Serial to allow for Bluetooth transmitting and receiving.</p>
-<p>The six sensors are initiated as AnalogIn pins to allow for the monitor of voltages constantly.</p>
-<p>The accelerometer is initiated as an AnalogIn pin to provide a measure of the angle of the buggy.</p>
-<p>The LMotor and RMotor pins are the input from the <a href="https://www.broadcom.com/products/motion-control-encoders/magnetic-encoders/aeat-601bf06" style="color:blue;">Motor Encoders </a> to allow for accurate distance and speed tracking for the buggy. </p><div style="font-size: 2em; color: cyan; margin-bottom: 10px;"> Output pins </div> <div class="fragment"><div class="line">PwmOut Motor_1(PB_7); </div>
-<div class="line">PwmOut Motor_2(PB_3); </div>
-<div class="line">DigitalOut Bipolar_1 (PC_1); </div>
-<div class="line">DigitalOut Bipolar_2 (PC_0);</div>
-<div class="line">DigitalOut Direction_1 (PA_14);</div>
-<div class="line">DigitalOut Direction_2 (PA_15); </div>
-<div class="line">DigitalOut Enable(PA_9); </div>
-<div class="line">C12832 lcd(D11, D13, D12, D7, D10);</div>
-</div><!-- fragment --><p> The Motor 1 and 2 pins are PwmOut pins used to send a PWM signal of 20kHz with varying duty cycle(depending on the function called) to the Motor Drive Board. 1 is for the left motor and 2 is for the right motor.</p>
-<p>The Bipolar 1 and 2 pins are DigitalOut pins used to control whether the motors will be running on unipolar or bipolar mode.</p>
-<p>The Direction 1 and 2 pins are DigitalOut pins used to control the direction of which the motors will be spinning, mainly used in unipolar mode.</p>
-<p>The Enable pin enables the motors to operate, and the motors will not spin if the Enable pin is set to 0.</p>
-<p>The lcd pins allows for data being sent to the lcd on the Application Shield. </p>
+<div class="textblock"><p>The functions listed on this page are related to the input and output of the buggy. </p><div style="font-size: 2em; color: cyan; margin-bottom: 10px;"> Speed Output </div> <div class="fragment"><div class="line"><span class="keywordtype">void</span> speedoutput(<span class="keywordtype">int</span> currentspeedL, <span class="keywordtype">int</span> currentspeedR)</div>
+</div><!-- fragment --><p> This function will calculate the average speed between the two wheels, thus the average speed of the buggy, then output the speed to the lcd and the BLE module. </p><div style="font-size: 2em; color: cyan; margin-bottom: 10px;"> State Indicator </div> <div class="fragment"><div class="line"><span class="keywordtype">void</span> stateindicator(<span class="keywordtype">int</span> state)</div>
+</div><!-- fragment --><p> This function will indicate the status of the buggy by changing the colour on the LED on the Application Shield, an global integer will be used for determining the state of the buggy. Green means the buggy is going forward normally, Blue means the buggy is turning, Flashing Red means the buggy is stopping and Red means the buggy has reached the end of the track and has stopped. </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

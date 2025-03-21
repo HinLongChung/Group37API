@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Group37: IO pins</title>
+<title>Group37: Sensing</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -76,7 +76,7 @@ $(function() { codefold.init(0); });
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function(){initNavTree('io.html',''); initResizable(true); });
+$(function(){initNavTree('sense.html',''); initResizable(true); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -102,37 +102,15 @@ $(function(){initNavTree('io.html',''); initResizable(true); });
 </div>
 
 <div><div class="header">
-  <div class="headertitle"><div class="title">IO pins</div></div>
+  <div class="headertitle"><div class="title">Sensing</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>The following IO pins are used in this project </p><div style="font-size: 2em; color: cyan; margin-bottom: 10px;"> Input pins </div> <div class="fragment"><div class="line">InterruptIn firebutton(PB_5);</div>
-<div class="line">Serial BLE(PA_11, PA_12);</div>
-<div class="line">AnalogIn sensor1(PC_10);</div>
-<div class="line">AnalogIn sensor2(PC_11);</div>
-<div class="line">AnalogIn sensor3(PC_12);</div>
-<div class="line">AnalogIn sensor4(PD_2);</div>
-<div class="line">AnalogIn sensor5(PH_0);</div>
-<div class="line">AnalogIn sensor6(PH_1);</div>
-<div class="line">AnalogIn accelerometer(0x58);</div>
-<div class="line">QEI LMotor(PC_2, PC_3, NC, 256); </div>
-<div class="line">QEI RMotor (PB_9, PB_8, NC, 256);</div>
-</div><!-- fragment --><p> The Fire button is used as the input to start the operation of the buggy.</p>
-<p>The HM-10 module is initiated as a Serial to allow for Bluetooth transmitting and receiving.</p>
-<p>The six sensors are initiated as AnalogIn pins to allow for the monitor of voltages constantly.</p>
-<p>The accelerometer is initiated as an AnalogIn pin to provide a measure of the angle of the buggy.</p>
-<p>The LMotor and RMotor pins are the input from the <a href="https://www.broadcom.com/products/motion-control-encoders/magnetic-encoders/aeat-601bf06" style="color:blue;">Motor Encoders </a> to allow for accurate distance and speed tracking for the buggy. </p><div style="font-size: 2em; color: cyan; margin-bottom: 10px;"> Output pins </div> <div class="fragment"><div class="line">PwmOut Motor_1(PB_7); </div>
-<div class="line">PwmOut Motor_2(PB_3); </div>
-<div class="line">DigitalOut Bipolar_1 (PC_1); </div>
-<div class="line">DigitalOut Bipolar_2 (PC_0);</div>
-<div class="line">DigitalOut Direction_1 (PA_14);</div>
-<div class="line">DigitalOut Direction_2 (PA_15); </div>
-<div class="line">DigitalOut Enable(PA_9); </div>
-<div class="line">C12832 lcd(D11, D13, D12, D7, D10);</div>
-</div><!-- fragment --><p> The Motor 1 and 2 pins are PwmOut pins used to send a PWM signal of 20kHz with varying duty cycle(depending on the function called) to the Motor Drive Board. 1 is for the left motor and 2 is for the right motor.</p>
-<p>The Bipolar 1 and 2 pins are DigitalOut pins used to control whether the motors will be running on unipolar or bipolar mode.</p>
-<p>The Direction 1 and 2 pins are DigitalOut pins used to control the direction of which the motors will be spinning, mainly used in unipolar mode.</p>
-<p>The Enable pin enables the motors to operate, and the motors will not spin if the Enable pin is set to 0.</p>
-<p>The lcd pins allows for data being sent to the lcd on the Application Shield. </p>
+<div class="textblock"><p>The functions listed on this page are related to the Sensing of different variables on the buggy. </p><div style="font-size: 2em; color: cyan; margin-bottom: 10px;"> LSpeed </div> <div class="fragment"><div class="line"><span class="keywordtype">float</span> Rspeed()</div>
+</div><!-- fragment --><p> This function will record the RPS of the left motor from the encoder and calculate its speed. </p><div style="font-size: 2em; color: cyan; margin-bottom: 10px;"> RSpeed </div> <div class="fragment"><div class="line"><span class="keywordtype">float</span> Rspeed()</div>
+</div><!-- fragment --><p> This function will record the RPS of the right motor from the encoder and calculate its speed. </p><div style="font-size: 2em; color: cyan; margin-bottom: 10px;"> Position </div> <div class="fragment"><div class="line"><span class="keywordtype">int</span> position()</div>
+</div><!-- fragment --><p> This position checks the position of the buggy by taking the inputs from all 6 sensors and comparing their values. It will be called from the forward function and will return an integer to indicate the white line's position relative to the buggy. 0 means the line is in the centre, 1 means the line is the left of the buggy, and 2 means the line is to the right of the buggy. </p><div style="font-size: 2em; color: cyan; margin-bottom: 10px;"> Slope </div> <div class="fragment"><div class="line"><span class="keywordtype">int</span> slope()</div>
+</div><!-- fragment --><p> This function will check whether the buggy is going up a slope, in which case the motor will be switch to bipolar mode for a higher torque. It will achieve this by reading the value from the accelerometer on the Application Shield and return its status as an integer. 0 means on flat ground, 1 means going uphill and 2 means going downhill. </p><div style="font-size: 2em; color: cyan; margin-bottom: 10px;"> Bluetooth Input </div> <div class="fragment"><div class="line"><span class="keywordtype">char</span> bluetoothinput()</div>
+</div><!-- fragment --><p> This function will take the input from the BLE module if there is a new input and return the input as a char, if a specific character is inputted, the buggy will stop immediately, this is for the user to stop the buggy if they see the buggy isn't functioning properly. </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
