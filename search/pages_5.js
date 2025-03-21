@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['sensing_0',['Sensing',['../sense.html',1,'functions']]]
+  ['pins_0',['IO pins',['../io.html',1,'']]]
 ];

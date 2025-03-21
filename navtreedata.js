@@ -27,7 +27,8 @@ var NAVTREE =
   [ "Group37", "index.html", [
     [ "Overview", "index.html", null ],
     [ "IO pins", "io.html", null ],
-    [ "Functions", "functions.html", "functions" ]
+    [ "Functions", "functions.html", "functions" ],
+    [ "end", "end.html", null ]
   ] ]
 ];
 
